@@ -13,9 +13,42 @@ USER_TYPE_CHOICES = [
 
 # Todas las marcas de autos disponibles. 
 BRAND_CHOICES = [
-    ('Fiat','Fiat'),
-    ('Renault','Renault'),
-    ('Toyota','Toyota'),
+
+        ('Honda', 'Honda'),
+        ('Chevrolet', 'Chevrolet'),
+        ('VW', 'VW'),
+        ('Fiat', 'Fiat'),
+        ('Jeep', 'Jeep'),
+        ('Renault', 'Renault'),
+        ('Citroen', 'Citroen'),
+        ('Zuzuki', 'Zuzuki'),
+        ('Nizzan', 'Nizzan'),
+        ('Mercedes Benz', 'Mercedes Benz'),
+        ('Subaru', 'Subaru'),
+        ('Toyota', 'Toyota'),
+        ('BYD', 'BYD'),
+        ('Hyundai', 'Hyundai'),
+        ('Peugeot', 'Peugeot'),
+        ('Mazda', 'Mazda'),
+        ('Chery', 'Chery'),
+        ('Kia', 'Kia'),
+        ('Ford', 'Ford'),
+        ('Changan', 'Changan'),
+        ('BMW', 'BMW'),
+        ('Audi', 'Audi'),
+        ('DFSK', 'DFSK'),
+        ('Dodge', 'Dodge'),
+        ('Faw', 'Faw'),
+        ('Geely', 'Geely'),
+        ('Haima', 'Haima'),
+        ('Haval', 'Haval'),
+        ('Jetour', 'Jetour'),
+        ('JMC', 'JMC'),
+        ('Land Rover', 'Land Rover'),
+        ('Mitsubishi', 'Mitsubishi'),
+        ('Seat', 'Seat'),
+        ('Volvo', 'Volvo'),
+
 ]
 
 # todos los servicios que se le pueden hacer a un auto
@@ -92,7 +125,7 @@ class Vehicle(models.Model):
     moddel = models.CharField(max_length=50, verbose_name='Modelo')
     year = models.IntegerField(default=current_year, verbose_name='Año de Fabricación')
     color = models.CharField(max_length=50, verbose_name='Color')
-    car_mechanic = models.ForeignKey(Mechanic, on_delete=models.CASCADE)
+    car_mechanic = models.ForeignKey(Mechanic, on_delete=models.CASCADE, blank=True, null=True, verbose_name='Mecánico Asignado')
     created_at = models.DateField(auto_now_add=True, verbose_name='Fecha Creación')
     
     def __str__(self):
